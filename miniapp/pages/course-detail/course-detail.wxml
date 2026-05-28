@@ -1,0 +1,33 @@
+<view class="container">
+  <view class="video-section">
+    <video 
+      id="courseVideo"
+      src="{{course.videoUrl || \"https://www.w3schools.com/html/mov_bbb.mp4\"}}"
+      controls
+      autoplay="{{false}}"
+      show-center-play-btn
+      show-fullscreen-btn
+      bind:timeupdate="onVideoTimeUpdate"
+      bind:ended="onVideoEnded"
+      bind:ready="onVideoReady"
+      class="video-player"
+    />
+  </view>
+
+  <view class="course-info">
+    <view class="course-title">{{course.title}}</view>
+    <view class="course-meta">
+      <text class="tag">{{course.category}}</text>
+      <text class="duration">已观看：{{watchDuration}}秒</text>
+    </view>
+    <view class="course-desc">{{course.description}}</view>
+    <view class="progress-bar" wx:if="{{currentProgress > 0}}">
+      <view class="progress-fill" style="width:{{currentProgress}}%"></view>
+      <text class="progress-text">已学习 {{currentProgress}}%</text>
+    </view>
+  </view>
+
+  <view class="action-bar">
+    <button class="btn-study" bindtap="onStartLearn">开始学习</button>
+  </view>
+</view>

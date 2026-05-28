@@ -1,0 +1,18 @@
+server:
+  port: 8080
+spring:
+  datasource:
+    url: jdbc:h2:file:./data/security_training;AUTO_SERVER=TRUE
+    username: sa
+    password: 
+    driver-class-name: org.h2.Driver
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+  h2:
+    console:
+      enabled: true
+jwt:
+  secret: qclaw-security-training-jwt-secret-key-2024
+  expiration: 86400000

@@ -1,0 +1,71 @@
+<view class="container">
+  <!-- 欢迎区域 -->
+  <view class="welcome-card">
+    <view class="welcome-text">欢迎回来</view>
+    <view class="welcome-name">{{userInfo.nickname || "员工"}}</view>
+  </view>
+
+  <!-- 快捷入口 -->
+  <view class="quick-actions">
+    <view class="action-item" bindtap="goCourse">
+      <view class="action-icon">📚</view>
+      <view class="action-text">课程中心</view>
+    </view>
+    <view class="action-item" bindtap="goExam">
+      <view class="action-icon">📝</view>
+      <view class="action-text">在线考试</view>
+    </view>
+  </view>
+
+  <!-- 学习统计 -->
+  <view class="stats-card">
+    <view class="stats-title">学习统计</view>
+    <view class="stats-row">
+      <view class="stat-item">
+        <view class="stat-value">{{stats.courseCount}}</view>
+        <view class="stat-label">课程总数</view>
+      </view>
+      <view class="stat-item">
+        <view class="stat-value">{{stats.completeCount}}</view>
+        <view class="stat-label">已完成</view>
+      </view>
+      <view class="stat-item">
+        <view class="stat-value">{{stats.examCount}}</view>
+        <view class="stat-label">待考试</view>
+      </view>
+    </view>
+  </view>
+
+  <!-- 推荐课程 -->
+  <view class="section">
+    <view class="section-title">推荐课程</view>
+    <view class="course-list">
+      <view class="course-item" wx:for="{{recommendedCourses}}" wx:key="id" bindtap="goStudy" data-id="{{item.id}}">
+        <view class="course-title">{{item.title}}</view>
+        <view class="course-desc">{{item.description}}</view>
+        <view class="course-meta">
+          <text class="course-duration">{{item.duration}}分钟</text>
+          <text class="course-category">{{item.category}}</text>
+        </view>
+      </view>
+    </view>
+  </view>
+
+  <!-- 最新通知 -->
+  <view class="section">
+    <view class="section-title">最新通知</view>
+    <view class="notice-list">
+      <view class="notice-item" wx:for="{{notices}}" wx:key="id" wx:for-index="nIdx" bindtap="toggleNotice" data-nidx="{{nIdx}}">
+        <view class="notice-title">
+          <text class="notice-tag" wx:if="{{item.type === 'warning'}}">预警</text>
+          <text class="notice-tag" wx:elif="{{item.type === 'training'}}">培训</text>
+          <text class="notice-tag" wx:elif="{{item.type === 'security'}}">安全</text>
+          <text class="notice-tag" wx:else>通知</text>
+          {{item.title}}
+        </view>
+        <view class="notice-brief" wx:if="{{!item.expanded}}">{{item.content}}</view>
+        <view class="notice-full" wx:if="{{item.expanded}}">{{item.content}}</view>
+      </view>
+    </view>
+  </view>
+</view>

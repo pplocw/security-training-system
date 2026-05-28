@@ -1,0 +1,23 @@
+<view class="container">
+  <view class="paper-title">{{paper.title}}</view>
+  <view class="timer">剩余时间：{{remaining}}秒</view>
+
+  <view class="question-list">
+    <view class="question-item" wx:for="{{questions}}" wx:key="id" wx:for-index="qIdx">
+      <view class="q-title">第{{qIdx+1}}题（{{item.type==="single" ? "单选" : "判断"}}）{{item.title}}</view>
+      <view class="options">
+        <view wx:for="{{item.options}}" wx:for-item="opt" wx:key="key"
+              bindtap="selectOption" data-qindex="{{qIdx}}" data-key="{{opt.key}}">
+          <view wx:if="{{answers[qIdx] === opt.key}}" class="option selected">
+            {{opt.key}}. {{opt.text}}
+          </view>
+          <view wx:else class="option">
+            {{opt.key}}. {{opt.text}}
+          </view>
+        </view>
+      </view>
+    </view>
+  </view>
+
+  <button class="submit-btn" bindtap="submitExam">提交试卷</button>
+</view>

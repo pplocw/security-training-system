@@ -1,0 +1,47 @@
+page { background: #f5f5f5; }
+.container { padding: 24rpx; }
+
+/* 概览卡片 */
+.overview-card { background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); border-radius: 24rpx; padding: 32rpx; display: flex; justify-content: space-between; align-items: center; margin-bottom: 24rpx; }
+.overview-left { display: flex; align-items: center; gap: 20rpx; }
+.overview-avatar { width: 100rpx; height: 100rpx; border-radius: 50%; background: rgba(255,255,255,0.3); display: flex; align-items: center; justify-content: center; font-size: 48rpx; color: white; }
+.overview-name { font-size: 34rpx; font-weight: bold; color: white; }
+.overview-sub { font-size: 24rpx; color: rgba(255,255,255,0.8); margin-top: 8rpx; }
+.overview-badge { text-align: center; }
+.badge-level { display: block; font-size: 40rpx; font-weight: bold; color: #ffd700; }
+.badge-desc { font-size: 22rpx; color: rgba(255,255,255,0.7); }
+
+/* 统计指标 */
+.stats-grid { display: flex; background: white; border-radius: 24rpx; padding: 32rpx; margin-bottom: 24rpx; }
+.stat-item { flex: 1; text-align: center; }
+.stat-num { font-size: 44rpx; font-weight: bold; color: #1890ff; }
+.stat-label { font-size: 22rpx; color: #999; margin-top: 8rpx; }
+
+/* 区块 */
+.section { margin-bottom: 24rpx; }
+.section-title { font-size: 32rpx; font-weight: bold; color: #333; margin-bottom: 16rpx; }
+
+/* 课程进度 */
+.course-progress-list { background: white; border-radius: 24rpx; overflow: hidden; }
+.progress-item { display: flex; justify-content: space-between; align-items: center; padding: 28rpx 32rpx; border-bottom: 1rpx solid #f0f0f0; }
+.progress-name { font-size: 30rpx; font-weight: bold; color: #333; }
+.progress-meta { font-size: 24rpx; color: #999; margin-top: 6rpx; }
+.progress-right { display: flex; align-items: center; gap: 16rpx; min-width: 240rpx; }
+.progress-bar-wrap { flex: 1; height: 16rpx; background: #f0f0f0; border-radius: 8rpx; overflow: hidden; }
+.progress-bar { height: 100%; background: linear-gradient(90deg, #667eea, #764ba2); border-radius: 8rpx; transition: width 0.3s; }
+.progress-pct { font-size: 24rpx; color: #666; min-width: 80rpx; text-align: right; }
+
+/* 考试记录 */
+.exam-record-list { background: white; border-radius: 24rpx; overflow: hidden; }
+.exam-item { display: flex; justify-content: space-between; align-items: center; padding: 28rpx 32rpx; border-bottom: 1rpx solid #f0f0f0; }
+.exam-name { font-size: 30rpx; font-weight: bold; color: #333; }
+.exam-time { font-size: 24rpx; color: #999; margin-top: 6rpx; }
+.exam-score { font-size: 36rpx; font-weight: bold; padding: 8rpx 20rpx; border-radius: 8rpx; }
+.exam-score.pass { color: #52c41a; background: #f6ffed; }
+.exam-score.fail { color: #ff4d4f; background: #fff2f0; }
+
+/* 成就 */
+.badge-list { display: flex; gap: 20rpx; background: white; border-radius: 24rpx; padding: 24rpx; }
+.badge-item { flex: 1; text-align: center; }
+.badge-icon { font-size: 56rpx; margin-bottom: 8rpx; }
+.badge-name { font-size: 22rpx; color: #666; }

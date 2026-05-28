@@ -1,0 +1,33 @@
+<view class="container">
+  <view class="category-tabs">
+    <view class="tab-item {{activeCategory === item.key ? \"active\" : \"\"}}" 
+          wx:for="{{categories}}" wx:key="key" 
+          data-key="{{item.key}}"
+          bindtap="onCategoryTap">
+      {{item.name}}
+    </view>
+  </view>
+
+  <view class="course-list">
+    <view class="course-card" wx:for="{{courses}}" wx:key="id" 
+          data-id="{{item.id}}"
+          bindtap="goStudy">
+      <view class="course-header">
+        <view class="course-title">{{item.title}}</view>
+        <view class="course-tag">{{item.category}}</view>
+      </view>
+      <view class="course-desc">{{item.description}}</view>
+      <view class="course-footer">
+        <text class="duration">⏱ {{item.duration}}分钟</text>
+        <view class="status">
+          <text wx:if="{{item.status === 1}}">进行中</text>
+          <text wx:else>已结束</text>
+        </view>
+      </view>
+    </view>
+  </view>
+
+  <view class="empty" wx:if="{{courses.length === 0}}">
+    暂无课程
+  </view>
+</view>

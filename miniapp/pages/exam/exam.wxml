@@ -1,0 +1,37 @@
+<view class="container">
+  <view class="stats-card">
+    <view class="stats-row">
+      <view class="stat-item">
+        <view class="stat-value">{{examStats.total}}</view>
+        <view class="stat-label">试卷总数</view>
+      </view>
+      <view class="stat-item">
+        <view class="stat-value">{{examStats.completed}}</view>
+        <view class="stat-label">已考试</view>
+      </view>
+      <view class="stat-item">
+        <view class="stat-value">{{examStats.avgScore}}</view>
+        <view class="stat-label">平均分</view>
+      </view>
+    </view>
+  </view>
+
+  <view class="paper-list">
+    <view class="paper-card" wx:for="{{papers}}" wx:key="id">
+      <view class="paper-title">{{item.title}}</view>
+      <view class="paper-desc">{{item.description}}</view>
+      <view class="paper-info">
+        <text>总分:{{item.totalScore}}分</text>
+        <text>及格:{{item.passScore}}分</text>
+        <text>时长:{{item.duration}}分钟</text>
+      </view>
+      <button class="start-btn" 
+              data-id="{{item.id}}"
+              bindtap="startExam">开始考试</button>
+    </view>
+  </view>
+
+  <view class="empty" wx:if="{{papers.length === 0}}">
+    暂无试卷
+  </view>
+</view>

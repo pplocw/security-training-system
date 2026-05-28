@@ -1,0 +1,14 @@
+<view class="container">
+  <view class="video-area" wx:if="{{course.videoUrl}}">
+    <video src="{{course.videoUrl}}" controls style="width:100%;"></video>
+  </view>
+  <view class="course-info">
+    <view class="course-title">{{course.title}}</view>
+    <view class="course-desc">{{course.description}}</view>
+    <view class="progress-bar">
+      <view class="progress-fill" style="width: {{progress}}%;"></view>
+    </view>
+    <view class="progress-text">学习进度: {{progress}}%</view>
+  </view>
+  <button class="complete-btn" bindtap="complete">标记完成</button>
+</view>

@@ -1,0 +1,51 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/course/course",
+    "pages/exam/exam",
+    "pages/mine/mine",
+    "pages/notice/notice",
+    "pages/study/study",
+    "pages/course-detail/course-detail",
+    "pages/exam-do/exam-do",
+    "pages/study-data/study-data",
+    "pages/settings/settings"
+  ],
+  "window": {
+    "navigationBarBackgroundColor": "#1890ff",
+    "navigationBarTitleText": "安全培训",
+    "navigationBarTextStyle": "white"
+  },
+  "tabBar": {
+    "color": "#999",
+    "selectedColor": "#1890ff",
+    "backgroundColor": "#fff",
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "text": "首页",
+        "iconPath": "images/home.png",
+        "selectedIconPath": "images/home-active.png"
+      },
+      {
+        "pagePath": "pages/course/course",
+        "text": "课程",
+        "iconPath": "images/book.png",
+        "selectedIconPath": "images/book-active.png"
+      },
+      {
+        "pagePath": "pages/exam/exam",
+        "text": "考试",
+        "iconPath": "images/exam.png",
+        "selectedIconPath": "images/exam-active.png"
+      },
+      {
+        "pagePath": "pages/mine/mine",
+        "text": "我的",
+        "iconPath": "images/user.png",
+        "selectedIconPath": "images/user-active.png"
+      }
+    ]
+  },
+  "sitemapLocation": "sitemap.json"
+}

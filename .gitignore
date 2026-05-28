@@ -1,0 +1,35 @@
+# macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+
+# IDE
+.idea/
+.settings/
+.project
+.classpath
+*.iml
+
+# Build artifacts
+target/
+*.class
+*.jar
+*.war
+*.ear
+
+# Logs
+*.log
+logs/
+
+# Database
+*.db
+*.mv.db
+
+# Temporary files
+*.tmp
+*.swp
+*~
+
+# OS
+Thumbs.db
+desktop.ini

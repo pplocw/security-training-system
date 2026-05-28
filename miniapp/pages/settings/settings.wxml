@@ -1,0 +1,68 @@
+<view class="container">
+  <!-- 账号信息 -->
+  <view class="account-card">
+    <view class="account-avatar">{{userInfo.avatar || '👤'}}</view>
+    <view class="account-info">
+      <view class="account-name">{{userInfo.nickname || userInfo.username || '未登录'}}</view>
+      <view class="account-role">{{userInfo.role === 'admin' ? '管理员' : '普通员工'}}</view>
+    </view>
+  </view>
+
+  <!-- 设置列表 -->
+  <view class="setting-group">
+    <view class="group-title">账号与安全</view>
+    <view class="setting-item" bindtap="switchAccount">
+      <view class="item-left">
+        <text class="item-icon">🔄</text>
+        <text class="item-text">切换账号</text>
+      </view>
+      <text class="item-arrow">›</text>
+    </view>
+    <view class="setting-item" bindtap="goStudyData">
+      <view class="item-left">
+        <text class="item-icon">📊</text>
+        <text class="item-text">学习数据</text>
+      </view>
+      <text class="item-arrow">›</text>
+    </view>
+  </view>
+
+  <view class="setting-group">
+    <view class="group-title">通知与显示</view>
+    <view class="setting-item" bindtap="toggleNotify">
+      <view class="item-left">
+        <text class="item-icon">🔔</text>
+        <text class="item-text">推送通知</text>
+      </view>
+      <switch class="item-switch" checked="{{notifyEnabled}}" bindchange="onNotifyChange" />
+    </view>
+    <view class="setting-item" bindtap="toggleDarkMode">
+      <view class="item-left">
+        <text class="item-icon">🌙</text>
+        <text class="item-text">深色模式</text>
+      </view>
+      <switch class="item-switch" checked="{{darkMode}}" bindchange="onDarkModeChange" />
+    </view>
+  </view>
+
+  <view class="setting-group">
+    <view class="group-title">关于</view>
+    <view class="setting-item">
+      <view class="item-left">
+        <text class="item-icon">ℹ️</text>
+        <text class="item-text">版本信息</text>
+      </view>
+      <text class="item-value">v1.0.0</text>
+    </view>
+    <view class="setting-item" bindtap="checkUpdate">
+      <view class="item-left">
+        <text class="item-icon">🔄</text>
+        <text class="item-text">检查更新</text>
+      </view>
+      <text class="item-arrow">›</text>
+    </view>
+  </view>
+
+  <!-- 退出登录 -->
+  <view class="logout-btn" bindtap="logout">退出登录</view>
+</view>
